@@ -1,0 +1,30 @@
+:root {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+  color-scheme: dark;
+  background: linear-gradient(135deg, #0f172a, #1d4ed8 45%, #7c3aed 100%);
+  color: #f8fafc;
+}
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; background: linear-gradient(135deg, #0f172a, #1d4ed8 45%, #7c3aed 100%); }
+button, input { font: inherit; }
+.app-shell { min-height: 100vh; padding: 24px; display: grid; gap: 20px; max-width: 1200px; margin: 0 auto; }
+.glass-panel { background: rgba(255,255,255,0.14); backdrop-filter: blur(24px); border: 1px solid rgba(255,255,255,0.2); box-shadow: 0 20px 60px rgba(15,23,42,0.25); border-radius: 28px; padding: 20px; }
+.hero { display: flex; flex-direction: column; gap: 16px; }
+.status-row { display: flex; gap: 10px; flex-wrap: wrap; }
+.status-pill { background: rgba(255,255,255,0.16); padding: 8px 12px; border-radius: 999px; font-size: 0.9rem; }
+.status-pill.muted { opacity: 0.8; }
+h1 { margin: 0; font-size: clamp(1.6rem, 3vw, 2.4rem); }
+p { margin: 0; color: #e2e8f0; max-width: 700px; }
+.suggestions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
+.suggestions button { border: none; border-radius: 999px; padding: 10px 14px; background: rgba(255,255,255,0.18); color: white; cursor: pointer; }
+.chat-panel { display: flex; flex-direction: column; gap: 16px; min-height: 60vh; }
+.message-list { display: flex; flex-direction: column; gap: 10px; flex: 1; overflow: auto; }
+.bubble { max-width: 80%; padding: 12px 14px; border-radius: 18px; line-height: 1.5; box-shadow: inset 0 1px 0 rgba(255,255,255,0.2); }
+.bubble.user { align-self: flex-end; background: rgba(59,130,246,0.85); }
+.bubble.assistant { align-self: flex-start; background: rgba(255,255,255,0.2); }
+.typing span { display: inline-block; width: 8px; height: 8px; margin-left: 4px; border-radius: 50%; background: white; animation: pulse 1s infinite; }
+.composer { display: flex; gap: 10px; align-items: center; }
+.composer input { flex: 1; background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.22); color: white; padding: 12px 14px; border-radius: 999px; outline: none; }
+.send-btn, .icon-btn { border: none; padding: 10px 14px; border-radius: 999px; color: white; background: rgba(255,255,255,0.18); cursor: pointer; }
+@keyframes pulse { 0%,100% { opacity:.3; transform: translateY(0);} 50% { opacity:1; transform: translateY(-2px);} }
+@media (max-width: 700px) { .app-shell { padding: 12px; } .bubble { max-width: 92%; } .composer { flex-wrap: wrap; } .composer input { width: 100%; } }
